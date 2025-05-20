@@ -9,7 +9,7 @@ use std::{
     task::Context,
     time::Duration,
 };
-use tutorial10_timer::TimerFuture;
+use timer::TimerFuture;
 
 struct Executor {
     ready_queue: Receiver<Arc<Task>>,
@@ -76,7 +76,7 @@ fn main() {
         TimerFuture::new(Duration::new(2, 0)).await;
         println!("Yose's Komputer: done!");
     });
-
+    println!("Yose's Komputer: hey hey");
     drop(spawner);
 
     executor.run();
